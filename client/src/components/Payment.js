@@ -16,7 +16,7 @@ function Payment(props) {
                 token={token => handleStripeToken(token)}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
             >
-                <button class="px-2 md:px-3 py-1 md:py-2 bg-green-500 text-white hover:bg-green-600 font-medium rounded shadow-lg">
+                <button class="px-2 md:px-3 py-1 md:py-2 bg-green-700 text-white hover:bg-green-600 font-medium rounded shadow-lg">
                     Add credits
                 </button>
             </StripeCheckout>

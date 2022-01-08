@@ -5,6 +5,9 @@ const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 
 const keys = require('./config/keys');
+require('./models/user');
+require('./models/survey');
+require('./services/passport');
 
 // INITIALIZE THE APP...
 const app = express();
@@ -17,8 +20,6 @@ app.use(cookieSession({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-require('./models/user');
-require('./services/passport');
 
 // CONNECT MONGODB ....
 mongoose.connect(keys.mongoURI, {
@@ -33,6 +34,7 @@ mongoose.connect(keys.mongoURI, {
 // APP ROUTES ...
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveysRoutes')(app);
 
 if(process.env.NODE_ENV === 'production') {
     // Express will serve up production assets
