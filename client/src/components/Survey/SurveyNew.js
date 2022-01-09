@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SurveyForm from './SurveyForm';
+import SurveyFormReview from './SurveyFormReview';
 
 const SurveyNew = () => {
+    const [showReview, setShowReview] = useState(false);
+
     return (
         <div class="relative bg-green-50 md:bg-green-100 min-h-screen w-full px-8 mx-auto py-12">
-            <SurveyForm />
+            {showReview === true ? <SurveyFormReview 
+                onCancel={() => setShowReview(false)}
+            /> : (
+                <SurveyForm 
+                    onSurveySubmit={() => setShowReview(true)}
+                />
+            )}
         </div>
     )
 }
