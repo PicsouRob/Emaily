@@ -47,7 +47,7 @@ function SurveyForm(props) {
 function validate(values) {
     const errors = {};
 
-    errors.emails = validateEmails(values.emails || '');
+    errors.recipients = validateEmails(values.recipients || '');
 
     formFields.forEach(({ name }) => {
         if(!values[name]) {

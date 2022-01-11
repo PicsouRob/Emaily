@@ -9,10 +9,10 @@ module.exports = (survey) => {
                     <p style="">Please answer the following question:</p>
                     <p style="">${survey.body}</p>
                     <div style="padding: 10px 20px; margin: 10px;">
-                        <a href="${keys.redirectDomain}/api/surveys/thanks">Yes</a>
+                        <a href="${keys.redirectDomain}/api/surveys/${survey.id}/yes">Yes</a>
                     </div>
                     <div style="padding: 10px 20px; margin: 10px;">
-                        <a href="${keys.redirectDomain}/api/surveys/thanks">No</a>
+                        <a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
                     </div>
                 </div>
             </body>
